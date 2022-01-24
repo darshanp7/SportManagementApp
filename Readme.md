@@ -1,4 +1,5 @@
-#FrontEnd
+# TODO
+## FrontEnd
     ## Two Dashboards
         ### User:
             - Home Page:
@@ -7,7 +8,7 @@
                 - Shows current active Tournaments (if any)
                 - Shows upcoming tournaments (if any)
             - Tournament Page:
-                - displays current active tournament's result and schedule
+                - displays current active tournament's result and upcoming matches in the tournament
                 - shows past tournament results
         ### Admin:
             - Home Page:
@@ -29,75 +30,62 @@
             - Teams Page:
                 - create, update and delete teams
 
-# Database Schema:
+## Database Schema:
 
- tournament(*tournamentID, name, organizer, year, sport, prize)
- team(*teamID, *name, *sport)
- player(*playerID, *team, name, age, contactNo, sport)
- match(*matchID, tournamentID, sport, date, homeTeam, awayTeam)
- matchResults(*matchID, tournamentId, matchName, winningTeam, manOfTheMatch)
- tournamentResults(*tournamentId, winningTeam, runnerUpTeam, manOfTheSeries)
+ * tournament(<u>tournamentID</u>, name, organizerID, year, sport, prize, winner, runnerUp, manOfTheTournament)
+ * organizer(<u>organizerID</u>, name, address, chiefCoordinator, contactNo, emailID);
+ * team(<u>teamID</u>, <u>name</u>, sport)
+ * player(<u>playerID</u>, team, name, age, contactNo, emailID, sport)
+ * a_match(<u>matchID</u>, matchName, tournamentID, sport, date, location, team1, team2, winner, manOfTheMatch)
+ * coach(<u>coachID</u>, name, yearsOfExperience, sport, teamID, noOfWins, noOfLoss, totalMatches)
 
-# Tournament
+## Tournament
 
-| Name                      | ID    | Organizer | Year | Sport      | Prize  |
-| ------------------------- | ----- | --------- | ---- | ---------- | ------ |
-| University Cricket League | 00001 | BIT       | 2020 | Cricket    | 50,000 |
-| Volleyball Championship   | 00002 | SKIT      | 2020 | VolleyBall | 50,000 |
+| Name         | ID    | Organizer ID | Year | Sport      | Prize  | Winner | Man Of The Tournament |
+| ------------ | ----- | ------------ | ---- | ---------- | ------ | ------ | --------------------- |
+| Tournament 1 | 00001 | 1            | 2020 | Cricket    | 50,000 | SJCE   | NameX                 |
+| Tournament 2 | 00002 | 2            | 2020 | VolleyBall | 50,000 | RNSIT  | NameZ                 |
 
-Create Tournament
- -> ID (Create Automatically)
- -> Year
- -> Organizer
- -> Sport
- -> Prize
+## Organizer
 
-# Result
-| Tournament ID | Winner |
-| ------------- | ------ |
-| 00001         | TID2   |
+| OrganizerID | Name | Address | Chief Coordinator | Contact No | Email ID        |
+| ----------- | ---- | ------- | ----------------- | ---------- | --------------- |
+| 1           | ORG1 | AREA1   | COORD1            | 9023456789 | COORD1@MAIL.COM |
+| 2           | ORG2 | AREA2   | COORD2            | 9123456789 | COORD2@MAIL.COM |
+| 3           | ORG3 | AREA3   | COORD3            | 9223456789 | COORD3@MAIL.COM |
 
-Create Result
- -> Tournament ID
- -> Winner (TeamID)
+## Teams
 
-# Teams
-
-| Team Name | Team Id | Sport   |
-| --------- | ------- | ------- |
-| TNAME1    | TID1    | Cricket |
-| TNAME2    | TID2    | Cricket |
-| TNAME3    | TID3    | Cricket |
-| TNAME4    | TID4    | Cricket |
-| TNAME5    | TID5    | Cricket |
-
-Create Team
- -> Team ID (Create Automatically)
- -> Team Name
- -> Select Sport (From Dropdown)
-
-Delete Team
+| Team Name | Team Id | Sport      |
+| --------- | ------- | ---------- |
+| TNAME1    | TID1    | Cricket    |
+| TNAME2    | TID2    | Cricket    |
+| TNAME3    | TID3    | Cricket    |
+| TNAME4    | TID4    | VolleyBall |
+| TNAME5    | TID5    | VolleyBall |
  
-# Players
+## Players
 
-| ID  | Name  | Age | Contact No | Team | Sport   |
-| --- | ----- | --- | ---------- | ---- | ------- |
-| 001 | NAMEA | 19  | 100        | TID1 | Cricket |
-| 002 | NAMEB | 21  | 101        | TID2 | Cricket |
+| ID  | Name  | Age | Contact No | EmailID        | Team | Sport   |
+| --- | ----- | --- | ---------- | -------------- | ---- | ------- |
+| 001 | NAMEA | 19  | 100        | NAMEA@MAIL.COM | TID1 | Cricket |
+| 002 | NAMEB | 21  | 101        | NAMEB@MAIL.COM | TID2 | Cricket |
 
-Create Player
- -> PlayerID (Create Automatically)
- -> Name
- -> Age
- -> Contact No
- -> TeamID (Suggest when typing Team Name)
- -> Sport (from Dropdown Menu)
+## Match
 
- Update Player
- Delete Player
+| Match ID | Match Name | Tournament ID | Sport      | Date       | Location | Team1  | Team2  | Winner | Man of the Match |
+| -------- | ---------- | ------------- | ---------- | ---------- | -------- | ------ | ------ | ------ | ---------------- |
+| 1        | Match-1    | 1             | Cricket    | 12/03/2022 | AREA1    | TNAME1 | TNAME2 | TNAME2 | NAMER            |
+| 2        | Match-2    | 2             | VolleyBall | 13/03/2022 | AREA2    | TNAME4 | TNAME5 | TNAME4 | NAMET            |
 
+## Coach
 
-# References
+| Coach ID | Name   | Years of Experience | Sport      | Team ID | No of Wins | No of Loss | Total Matches |
+| -------- | ------ | ------------------- | ---------- | ------- | ---------- | ---------- | ------------- |
+| 1        | COACHA | 10                  | CRICKET    | TID1    | 6          | 2          | 9             |
+| 2        | COACHB | 7                   | VolleyBall | TID5    | 3          | 4          | 7             |
+
+## References
 
 ## Database & SQL:
 

@@ -2,7 +2,7 @@
   "name": "client",
   "version": "1.0.0",
   "description": "- Home Page:\r                 - Shows Today's matches (if any)\r                 - Shows Upcoming matches (if any)\r                 - Shows current active Tournaments (if any)\r                 - Shows upcoming tournaments (if any)\r             - Tournament Page:\r                 - displays current active tournament's result and schedule\r                 - shows past tournament results\r         ### Admin:\r             - Home Page:\r                 - Shows Today's matches (if any)\r                 - Shows Upcoming matches (if any)\r                 - Shows current active Tournaments (if any)\r                 - Shows upcoming tournaments (if any)\r             - Tournament Page:\r                 - displays current active tournament's result and schedule\r                 - shows past tournament results\r                 - create tournament\r             - Match Page:\r                 - create Match\r             - Results Page:\r                 - update match results\r                 - update tournament results\r             - Players Page:\r                 - create, update and delete player info\r             - Teams Page:\r                 - create, update and delete teams",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js"

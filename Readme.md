@@ -32,7 +32,7 @@
 
 ## Database Schema:
 
- * tournament(<u>tournamentID</u>, name, organizerID, year, sport, prize, winner, runnerUp, manOfTheTournament)
+ * tournament(<u>tournamentID</u>, name, organizerID, startDate, sport, prize, winner, runnerUp, manOfTheTournament)
  * organizer(<u>organizerID</u>, name, address, chiefCoordinator, contactNo, emailID);
  * team(<u>teamID</u>, <u>name</u>, sport)
  * player(<u>playerID</u>, team, name, age, contactNo, emailID, sport)
@@ -41,10 +41,10 @@
 
 ## Tournament
 
-| Name         | ID    | Organizer ID | Year | Sport      | Prize  | Winner | Man Of The Tournament |
-| ------------ | ----- | ------------ | ---- | ---------- | ------ | ------ | --------------------- |
-| Tournament 1 | 00001 | 1            | 2020 | Cricket    | 50,000 | SJCE   | NameX                 |
-| Tournament 2 | 00002 | 2            | 2020 | VolleyBall | 50,000 | RNSIT  | NameZ                 |
+| Name         | ID    | Organizer ID | startDate  | Sport      | Prize  | Winner | Man Of The Tournament |
+| ------------ | ----- | ------------ | ---------- | ---------- | ------ | ------ | --------------------- |
+| Tournament 1 | 00001 | 1            | 16-03-2020 | Cricket    | 50,000 | SJCE   | NameX                 |
+| Tournament 2 | 00002 | 2            | 20-03-2020 | VolleyBall | 50,000 | RNSIT  | NameZ                 |
 
 ## Organizer
 

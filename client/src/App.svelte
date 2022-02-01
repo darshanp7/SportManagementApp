@@ -1,28 +1,45 @@
 <script>
-	import Home from './Home.svelte';
-	import jQuery from "jquery";
-	import { onMount } from "svelte";
-	import jquery from 'jquery';
+	import Home from "./Home.svelte";
 
-	onMount(() => {
-		jQuery(".ui .item").on("click", function () {
-			jQuery(".ui .item").removeClass("active");
-			jQuery(this).addClass("active");
-			//console.log(jQuery(".ui .item .active").html());
-		});
-	});
+	let active = "Home";
 </script>
 
 <main>
 	<div class="ui menu">
-		<a class="ui item active"> Home </a>
-		<a class="ui item"> Matches </a>
-		<a class="ui item"> Tournaments </a>
+		<!-- svelte-ignore a11y-missing-attribute -->
+		<a
+			class="ui item {active === 'Home' ? 'active' : ''}"
+			on:click={() => (active = "Home")}
+		>
+			Home
+		</a>
+		<!-- svelte-ignore a11y-missing-attribute -->
+		<a
+			class="ui item {active === 'Matches' ? 'active' : ''}"
+			on:click={() => (active = "Matches")}
+		>
+			Matches
+		</a>
+		<!-- svelte-ignore a11y-missing-attribute -->
+		<a
+			class="ui item {active === 'Tournaments' ? 'active' : ''}"
+			on:click={() => (active = "Tournaments")}
+		>
+			Tournaments
+		</a>
 		<div class="right menu">
 			<a class="ui item" href="/"> Logout </a>
 		</div>
 	</div>
-	<Home />
+	{#if active == "Home"}
+		<Home />
+	{/if}
+	{#if active == "Matches"}
+		<!-- <Matches /> -->
+	{/if}
+	{#if active == "Tournament"}
+		<!-- <Tournaments /> -->
+	{/if}
 </main>
 
 <style>

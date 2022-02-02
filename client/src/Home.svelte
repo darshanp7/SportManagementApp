@@ -68,6 +68,7 @@
                 </div>
             </div>
         </div>
+        <div class="ui divider"></div>
         <div class="row">
             <div class="ui two row grid">
                 <div class="row">

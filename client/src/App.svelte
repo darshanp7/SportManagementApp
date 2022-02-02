@@ -1,7 +1,10 @@
 <script>
 	import Home from "./Home.svelte";
+	import Matches from './Matches.svelte';
+	import Tournaments from './Tournaments.svelte';
 
 	let active = "Home";
+	let loggedIn = false;
 </script>
 
 <main>
@@ -28,6 +31,7 @@
 			Tournaments
 		</a>
 		<div class="right menu">
+			<a class="ui item" href="/"> Profile </a>
 			<a class="ui item" href="/"> Logout </a>
 		</div>
 	</div>
@@ -35,10 +39,10 @@
 		<Home />
 	{/if}
 	{#if active == "Matches"}
-		<!-- <Matches /> -->
+		<Matches />
 	{/if}
-	{#if active == "Tournament"}
-		<!-- <Tournaments /> -->
+	{#if active == "Tournaments"}
+		<Tournaments />
 	{/if}
 </main>
 

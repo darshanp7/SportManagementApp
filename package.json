@@ -1,21 +1,26 @@
 {
-  "name": "client",
+  "name": "svelte-app",
   "version": "1.0.0",
-  "description": "- Home Page:\r                 - Shows Today's matches (if any)\r                 - Shows Upcoming matches (if any)\r                 - Shows current active Tournaments (if any)\r                 - Shows upcoming tournaments (if any)\r             - Tournament Page:\r                 - displays current active tournament's result and schedule\r                 - shows past tournament results\r         ### Admin:\r             - Home Page:\r                 - Shows Today's matches (if any)\r                 - Shows Upcoming matches (if any)\r                 - Shows current active Tournaments (if any)\r                 - Shows upcoming tournaments (if any)\r             - Tournament Page:\r                 - displays current active tournament's result and schedule\r                 - shows past tournament results\r                 - create tournament\r             - Match Page:\r                 - create Match\r             - Results Page:\r                 - update match results\r                 - update tournament results\r             - Players Page:\r                 - create, update and delete player info\r             - Teams Page:\r                 - create, update and delete teams",
-  "main": "app.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "start": "node server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.0",
+    "rollup": "^2.3.4",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-svelte": "^7.0.0",
+    "rollup-plugin-terser": "^7.0.0",
+    "svelte": "^3.0.0"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.2",
-    "mysql": "^2.18.1"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.15"
+    "mysql": "^2.18.1",
+    "sirv-cli": "^2.0.0"
   }
 }

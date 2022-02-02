@@ -5,7 +5,7 @@
 
 <table class="ui red table">
     <thead>
-      <tr><th>Food</th>
+      <tr><th>Food </th>
       <th>Calories</th>
       <th>Protein</th>
     </tr></thead><tbody>
